@@ -1,5 +1,5 @@
-# ff1rando_autosplitter
-Currently being tested, needs FCEUX 2.2.3 - currently seems to run right with all tested roms on my PC, looking for people to test itout
+# FF! Randomized Auto Splitter for LiveSplit
+Currently being tested, needs FCEUX 2.2.3 - currently seems to run right with all tested roms on my PC, looking for people to test it out
 
 How to use this:
 * Download the .asl file and put it somewhere you will remember (in your LiveSplit folder might be a good option)
