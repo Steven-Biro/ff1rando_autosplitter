@@ -31,7 +31,7 @@ split
 	{
 		return(true);
 	}
-	else if(settings["chaos"] && current.btl_result==255)
+	else if(settings["chaos"] && current.btl_result==255 && current.btl_result!=old.btl_result)
 	{
 		return(true);
 	}
