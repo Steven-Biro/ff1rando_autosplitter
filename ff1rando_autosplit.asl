@@ -17,27 +17,27 @@ state("fceux")
 split
 {
 	// split on goal line
-	if(settings["lute"] && current.lute != old.lute && current.lute != 00)
+	if(settings["lute"] && current.lute != old.lute && current.lute != 00 && current.char_name_1==old.char_name_1)
 	{   
    return(true);
 }
-	else if(settings["tnt"] && current.tnt!=old.tnt && current.tnt!=00)
+	else if(settings["tnt"] && current.tnt!=old.tnt && current.tnt!=00 && current.char_name_1==old.char_name_1)
 	{
 		return(true);
 	}
-		else if(settings["canal"] && current.canal!=old.canal && current.canal!=00)
+		else if(settings["canal"] && current.canal!=old.canal && current.canal!=00 && current.char_name_1==old.char_name_1)
 	{
 		return(true);
 	}
-	else if(settings["ship"] && current.ship!=old.ship && current.ship!=00)
+	else if(settings["ship"] && current.ship!=old.ship && current.ship!=00 && current.char_name_1==old.char_name_1)
 	{
 		return(true);
 	}
-	else if(settings["canoe"] && current.canoe!=old.canoe && current.canoe!=00)
+	else if(settings["canoe"] && current.canoe!=old.canoe && current.canoe!=00 && current.char_name_1==old.char_name_1)
 	{
 		return(true);
 	}
-	else if(settings["orbs"] && ((current.earth_orb!=old.earth_orb && current.earth_orb!=0)||(current.fire_orb!=old.fire_orb && current.fire_orb!=0)||(current.water_orb!=old.water_orb && current.water_orb!=0)||(current.air_orb!=old.air_orb && current.air_orb!=0)))
+	else if(settings["orbs"] && ((current.earth_orb!=old.earth_orb && current.earth_orb!=0)||(current.fire_orb!=old.fire_orb && current.fire_orb!=0)||(current.water_orb!=old.water_orb && current.water_orb!=0)||(current.air_orb!=old.air_orb && current.air_orb!=0)) && (current.char_name_1==old.char_name_1))
 	{
 		return(true);
 	}
