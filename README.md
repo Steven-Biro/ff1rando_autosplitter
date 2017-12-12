@@ -1,4 +1,4 @@
-# FF! Randomized Auto Splitter for LiveSplit
+# FF1 Randomized Auto Splitter for LiveSplit
 Currently being tested, needs FCEUX 2.2.3 - currently seems to run right with all tested roms on my PC, looking for people to test it out
 
 How to use this:
