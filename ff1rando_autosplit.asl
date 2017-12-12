@@ -25,6 +25,10 @@ split
 	{
 		return(true);
 	}
+		else if(settings["canal"] && current.canal!=old.canal && current.canal!=00)
+	{
+		return(true);
+	}
 	else if(settings["ship"] && current.ship!=old.ship && current.ship!=00)
 	{
 		return(true);
