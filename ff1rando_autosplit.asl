@@ -1,6 +1,6 @@
 state("fceux")
 {//3f4c6c,43512c,436cfc, possible offsets fceux 2.2.3
-	byte earth_orb: "fceux.exe", 0x436cfc, 0x32;
+	byte earth_orb: "fceux.exe", 0x436cfc, 0x032;
 	byte fire_orb: "fceux.exe", 0x436cfc, 0x033;
 	byte water_orb: "fceux.exe", 0x436cfc, 0x034;
 	byte air_orb: "fceux.exe", 0x436cfc, 0x035;
@@ -8,6 +8,7 @@ state("fceux")
 	byte lute: "fceux.exe", 0x436cfc, 0x021;
 	byte ship: "fceux.exe", 0x436cfc, 0x000;
 	byte tnt: "fceux.exe", 0x436cfc, 0x026;
+	byte canal:"fceux.exe", 0x436cfc, 0x00C;
 	byte btl_result: "fceux.exe", 0x436cfc, 0xB86;
 	byte char_name_1: "fceux.exe", 0x436cfc, 0x102;
 }
@@ -32,7 +33,7 @@ split
 	{
 		return(true);
 	}
-	else if(settings["orbs"] && current.earth_orb!=old.earth_orb||current.fire_orb!=old.fire_orb||current.water_orb!=old.water_orb||current.air_orb!=old.air_orb)
+	else if(settings["orbs"] && ((current.earth_orb!=old.earth_orb && current.earth_orb!=0)||(current.fire_orb!=old.fire_orb && current.fire_orb!=0)||(current.water_orb!=old.water_orb && current.water_orb!=0)||(current.air_orb!=old.air_orb && current.air_orb!=0)))
 	{
 		return(true);
 	}
@@ -47,7 +48,7 @@ split
 
 start
 	{
-	return(settings["start"] &&current.char_name_1!=0);
+	return(settings["start"] &&current.char_name_1!=0 && current.char_name_1!=old.char_name_1);
 	}
 
 reset {
@@ -64,9 +65,10 @@ startup
 	settings.SetToolTip("orbs", "Split on getting an orb");
 	settings.Add("canoe", true, "Canoe");
 	settings.SetToolTip("canoe", "Split on getting the canoe");
-	settings.Add("tnt",true,"TNT");
+	settings.Add("tnt",false,"TNT");
 	settings.SetToolTip("tnt", "Split on getting the TNT");
-	settings.Add("ship", true, "Ship");
+	settings.Add("canal",true,"Canal","tnt");
+	settings.SetToolTip("canal", "Split on handing in the TNT");	settings.Add("ship", true, "Ship");
 	settings.SetToolTip("ship", "Split on getting the ship");
 	settings.Add("lute", true, "Lute");
 	settings.SetToolTip("lute", "Split on getting the lute");
