@@ -52,7 +52,7 @@ split
 
 start
 	{
-	return(settings["start"] &&current.char_name_1!=0 && current.char_name_1!=old.char_name_1);
+	return(settings["start"] &&current.char_name_1!=0 && current.char_name_1!=old.char_name_1 && current.char_name_1!=0);
 	}
 
 reset {
